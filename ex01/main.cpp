@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 17:32:55 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/04/16 18:06:10 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:48:01 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,9 +14,12 @@
 
 int	main(void)
 {
-	std::cout << "-------------- 0 zombie ----------------" << std::endl;
+	std::cout << "------------------------ 0 zombie ---------------------------" << std::endl;
 	Zombie	*z1 = zombieHorde(0, "Clément");
-	delete[](z1);
+	if (!z1)
+		std::cout << "There is no zombie in this horde." << std::endl;
+	else
+		delete[](z1);
 
 	std::cout << std::endl << "---------------------- 1 zombie -------------------------" << std::endl;
 	Zombie	*z2 = zombieHorde(1, "Tristan");

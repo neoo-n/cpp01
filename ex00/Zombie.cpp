@@ -6,14 +6,13 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:33:01 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/04/16 15:23:08 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/04/17 12:13:40 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "Zombie.hpp"
 
 Zombie::Zombie(void)
-: name(NULL)
 {
 }
 
