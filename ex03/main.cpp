@@ -1,35 +1,32 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 13:29:06 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/04/17 18:18:11 by dvauthey         ###   ########.fr       */
+/*   Created: 2025/04/17 18:12:38 by dvauthey          #+#    #+#             */
+/*   Updated: 2025/04/17 23:03:37 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-# include <iostream>
-
-class Zombie
+int main(void)
 {
-	private:
-		std::string	name;
-		
-	public:
-		Zombie(void);
-		Zombie(std::string n);
-		~Zombie(void);
-		std::string	getName(void);
-		void		setName(std::string n_name);
-		void		announce(void);
-};
+	std::cout << "--------- HumanA ---------------" << std::endl;
+	Weapon	w1("Sword");
+	HumanA	h1("Kinomoto", w1);
+	HumanA	h2("Kero", w1);
+	h1.attack();
+	h2.attack();
 
-Zombie* newZombie(std::string name);
-void 	randomChump(std::string name);
+	std::cout << std::endl << "--------- HumanB ---------------" << std::endl;
+	Weapon	w2("Katana");
+	HumanB	h3("Sakura");
+	h3.setWeapon(w2);
+	h3.attack();
 
-#endif
+	return (0);
+}

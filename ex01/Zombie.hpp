@@ -6,11 +6,12 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:29:06 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/04/16 17:34:43 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/04/17 18:18:47 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#pragma once
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 # include <iostream>
 
@@ -29,3 +30,5 @@ class Zombie
 };
 
 Zombie* zombieHorde(int N, std::string name);
+
+#endif
