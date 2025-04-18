@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 18:13:53 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/04/17 23:16:16 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/04/18 12:16:54 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -26,7 +26,7 @@ HumanB::HumanB(std::string n)
 
 HumanB::~HumanB(void)
 {
-	std::cout << "A humanB is dead." << std::endl;
+	std::cout << "A humanB (" << name << ") is dead." << std::endl;
 }
 
 std::string	HumanB::getName(void)
@@ -36,7 +36,7 @@ std::string	HumanB::getName(void)
 
 Weapon		HumanB::getWeapon(void)
 {
-	return (weapon);
+	return (*weapon);
 }
 
 
@@ -45,16 +45,16 @@ void		HumanB::setName(std::string n_name)
 	name = n_name;
 }
 
-void		HumanB::setWeapon(Weapon n_weapon)
+void		HumanB::setWeapon(Weapon &n_weapon)
 {
-	weapon = n_weapon;
+	weapon = &n_weapon;
 }
 
 void		HumanB::attack(void)
 {
 	std::cout << name << " attacks with ";
 	if (weapon)
-		std::cout << "their " <<  weapon.getType() << std::endl;
+		std::cout << "their " <<  weapon->getType() << std::endl;
 	else
 		std::cout << "nothing" << std::endl;
 }
