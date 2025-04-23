@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:03:27 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/04/22 11:07:50 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:31:53 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ class Harl
 		Harl(void);
 		~Harl(void);
 		void	complain(std::string level);
-}
+};
 
 #endif
