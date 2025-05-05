@@ -30,7 +30,7 @@ static int	open_files(std::fstream &f1, std::fstream &f2, char **av)
 	f2.open(file2.c_str(), std::ios::out);
 	if (!f2.is_open())
 	{
-		std::cout << "Error opening file 2 : " << std::strerror(errno) << std::endl;
+		std::cerr << "Error opening file 2 : " << std::strerror(errno) << std::endl;
 		f1.close();
 		return (0);
 	}
@@ -58,7 +58,7 @@ static int	in_error(std::fstream &f1)
 	}
 	if (f1.fail())
 	{
-		std::cout << "Error : could not getline correctly" << std::endl;
+		std::cerr << "Error : could not getline correctly" << std::endl;
 		f1.clear();
 		f1.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		return (2);
