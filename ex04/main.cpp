@@ -13,6 +13,7 @@
 #include <iostream>
 #include <fstream>
 #include <limits>
+#include <cstring>
 
 static int	open_files(std::fstream &f1, std::fstream &f2, char **av)
 {
@@ -23,13 +24,13 @@ static int	open_files(std::fstream &f1, std::fstream &f2, char **av)
 	f1.open(av[1], std::ios::in);
 	if (!f1.is_open())
 	{
-		std::cout << "Error with opening the file 1." << std::endl;
+		std::cerr << "Error opening file 1 : " << std::strerror(errno) << std::endl;
 		return (0);
 	}
 	f2.open(file2.c_str(), std::ios::out);
 	if (!f2.is_open())
 	{
-		std::cout << "Error with opening the file 2." << std::endl;
+		std::cout << "Error opening file 2 : " << std::strerror(errno) << std::endl;
 		f1.close();
 		return (0);
 	}
@@ -75,7 +76,7 @@ int	main(int ac, char **av)
 
 	if (ac != 4)
 	{
-		std::cout << "You need 3 arguments with this program : a filename and two strings." << std::endl;
+		std::cerr << "You need 3 arguments with this program : a filename and two strings." << std::endl;
 		return (1);
 	}
 	if (!open_files(f1, f2, av))
